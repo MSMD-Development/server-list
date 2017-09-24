@@ -13,11 +13,15 @@ block content
 			.col
 				.card
 					.card-body
-						h6.card-title.mb-2.text-muted 快速搜尋
-						form
-							.form-row
+						h5.card-title.mb-2.text-muted 快速新增伺服器<small>（注意：輸入的資料要經過審核後才會顯示在列表中）</small>
+						form(action="/", method="post")
+							.form-row.align-items-center
 								.col
-									input(type="text").form-control
+									input(type="text", placeholder="伺服器名稱", required).form-control
+								.col
+									input(type="text", placeholder="連線位置", required).form-control
+								.col-auto
+									button.btn.btn-primary.form-control(type="submit") 新增
 		.row
 			.col
 				table.table.table-hover
@@ -28,13 +32,17 @@ block content
 						th 伺服器版本
 						th 狀態
 						th 玩家數量
-						th 詳細資料
+						th 細節
 					each s, index in server
-						tr
-							td= index+1
-							td= s.name
-							td= s.host
-							td= s.ver
-							td= (s.online)?"在線":"離線"
-							td= s.players + "/" + s.maxplayers
-							td: a.btn.btn-xs(href= "/" + s.id) 查看
+						if(s.display)
+							tr
+								td= index+1
+								td= s.name
+								td= s.host
+								td= s.ver
+								if s.online
+									td.text-success 在線
+								else
+									td.text-danger 離線
+								td= s.players + "/" + s.maxplayers
+								td: a.btn.btn-xs(href= "/" + s.id) 查看

@@ -8,7 +8,8 @@ var serverSchema = new mongoose.Schema({
 	online: { type: Boolean, required: true },
 	players: { type: Number, required: true },
 	maxplayers: { type: Number, required: true },
-	description: { type: String, required: true }
+	description: { type: String, required: true },
+	display: { type: Boolean, required: true }
 }, {
 	collection: "servers"
 });

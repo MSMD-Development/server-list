@@ -19,12 +19,11 @@ router.route('/')
 			maxplayers: 0,
 			description: ' '
 		});
-		console.log(req.body)
 		s.save((err, server) => {
 			if (err)
 				res.send(err);
 			else
-				res.send("Success!");
+				res.redirect('/');
 		});
 	});
 

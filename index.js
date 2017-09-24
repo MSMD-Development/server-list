@@ -25,6 +25,7 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.disable('view cache');
 
 // routes
 var r_main = require("./router/main");
