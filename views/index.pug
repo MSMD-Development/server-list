@@ -1,0 +1,26 @@
+extends template
+
+block title
+	title 伺服器列表
+
+block content
+	.container
+		.row
+			.col
+				h1 伺服器列表
+		.row
+			.col
+				table.table.table-hover
+					tr
+						td 伺服器 ID
+						td 伺服器名稱
+						td 伺服器 IP
+						td 版本
+						td 狀態
+					each s in server
+						tr
+							td= s.id
+							td= s.name
+							td= s.host
+							td= s.ver
+							td= (s.online)?"線上":"不在線上"

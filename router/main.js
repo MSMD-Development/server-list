@@ -4,7 +4,7 @@ var server = require("./../db/schema");
 
 router.get('/', (req, res) => {
 	server.find((err, servers) => {
-		res.json(servers);
+		res.render('index', { server: servers });
 	});
 });
 
