@@ -1,0 +1,6 @@
+{
+	"db_host": "host_ip",
+	"db_database": "db",
+	"db_user": "username",
+	"db_pw": "password"
+}
