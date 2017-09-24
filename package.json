@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MSMD-Development/server-list/issues"
   },
-  "homepage": "https://github.com/MSMD-Development/server-list#readme"
+  "homepage": "https://github.com/MSMD-Development/server-list#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.4"
+  }
 }
