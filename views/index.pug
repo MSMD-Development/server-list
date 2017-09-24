@@ -11,18 +11,27 @@ block content
 	.container
 		.row
 			.col
+				.card
+					.card-body
+						h6.card-title.mb-2.text-muted 快速搜尋
+						form
+							.form-row
+								.col
+									input(type="text").form-control
+		.row
+			.col
 				table.table.table-hover
 					tr
-						td 伺服器 ID
-						td 伺服器名稱
-						td 伺服器 IP
-						td 伺服器版本
-						td 狀態
-						td 玩家數量
-						td 詳細資料
+						th #
+						th 伺服器名稱
+						th 伺服器 IP
+						th 伺服器版本
+						th 狀態
+						th 玩家數量
+						th 詳細資料
 					each s, index in server
 						tr
-							td= s.id
+							td= index+1
 							td= s.name
 							td= s.host
 							td= s.ver
