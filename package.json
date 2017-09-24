@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/MSMD-Development/server-list#readme",
   "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
     "express": "^4.15.4",
+    "gamedig": "^1.0.37",
     "mongoose": "^4.11.12",
     "mongoose-unique-validator": "^1.0.6",
     "pug": "^2.0.0-rc.4"

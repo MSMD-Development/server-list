@@ -6,7 +6,11 @@ var serverSchema = new mongoose.Schema({
 	host: { type: String, required: true, unique: true },
 	ver: { type: String, required: true },
 	online: { type: Boolean, required: true },
-	lastCheck: { type: Date, default: Date.now }
+	players: { type: Number, required: true },
+	maxplayers: { type: Number, required: true },
+	description: { type: String, required: true }
+}, {
+	collection: "servers"
 });
 
 serverSchema.plugin(mongooseUniqueValidator);

@@ -4,10 +4,11 @@ block title
 	title 伺服器列表
 
 block content
+	.jumbotron
+		.container
+				h1.display-3 伺服器列表
+				p.lead 歡迎踴躍登錄您的伺服器資訊，本列表將每 5 分鐘更新所有伺服器的在線狀態。
 	.container
-		.row
-			.col
-				h1 伺服器列表
 		.row
 			.col
 				table.table.table-hover
@@ -15,12 +16,16 @@ block content
 						td 伺服器 ID
 						td 伺服器名稱
 						td 伺服器 IP
-						td 版本
+						td 伺服器版本
 						td 狀態
-					each s in server
+						td 玩家數量
+						td 詳細資料
+					each s, index in server
 						tr
 							td= s.id
 							td= s.name
 							td= s.host
 							td= s.ver
-							td= (s.online)?"線上":"不在線上"
+							td= (s.online)?"在線":"離線"
+							td= s.players + "/" + s.maxplayers
+							td: a.btn.btn-xs(href= "/" + s.id) 查看
