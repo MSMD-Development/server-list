@@ -1,0 +1,19 @@
+{
+  "name": "msmd-server-list",
+  "version": "1.0.0",
+  "description": "伺服器列表與在線狀態偵測",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSMD-Development/server-list.git"
+  },
+  "author": "Lorex <ceo@sita.tech>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MSMD-Development/server-list/issues"
+  },
+  "homepage": "https://github.com/MSMD-Development/server-list#readme"
+}
