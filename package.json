@@ -18,6 +18,8 @@
   "homepage": "https://github.com/MSMD-Development/server-list#readme",
   "dependencies": {
     "express": "^4.15.4",
+    "mongoose": "^4.11.12",
+    "mongoose-unique-validator": "^1.0.6",
     "pug": "^2.0.0-rc.4"
   }
 }
