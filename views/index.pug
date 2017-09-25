@@ -21,7 +21,7 @@ block content
 									button.btn.btn-primary.form-control(type="submit") 新增
 		.row
 			.col
-				table.table.table-hover.table-responsive
+				table.table.table-hover
 					tr
 						th #
 						th 伺服器名稱
@@ -42,4 +42,4 @@ block content
 								else
 									td.text-danger 離線
 								td= s.players + "/" + s.maxplayers
-								td: a.btn.btn-default.btn-xs(href= "/" + s.id) 查看
+								td: a.btn.btn-primary.btn-xs(href= "/" + s.id) 查看

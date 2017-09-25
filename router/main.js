@@ -37,7 +37,6 @@ router.route('/:id')
 				host: info.host
 			}).then((state) => {
 				console.log(state)
-				console.log(state.players[0])
 				res.render('svInfo', {
 					online: true,
 					server: info,
