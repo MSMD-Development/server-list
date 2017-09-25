@@ -1,0 +1,47 @@
+extends template
+
+block title
+	title 伺服器詳細資訊
+
+block content
+	include header
+
+	.container
+		.row
+			.col
+				ol.breadcrumb
+					li.breadcrumb-item: a(href="/") 首頁
+					li.breadcrumb-item.active 伺服器資訊
+		.row
+			.col
+				table.table.table-hover.table-responsive
+					tr
+						th 伺服器 ID
+						td= server.id
+					tr
+						th 伺服器名稱
+						td= server.name
+					tr
+						th 在線狀態
+						if online
+							td.text-success 在線
+						else
+							td.text-danger 離線
+					tr
+						th 伺服器網址
+						td= server.host
+					tr
+						th 伺服器真實 IP
+						td= state.query.address
+					tr
+						th 連接埠
+						td= state.query.port
+					tr
+						th 伺服器版本
+						td= state.raw.version
+					tr
+						th 線上玩家
+						td= state.players.length + " / " + state.maxplayers
+					tr
+						th 伺服器介紹 (MOTD)
+						td= (state.raw.description)?(state.raw.description):"無"

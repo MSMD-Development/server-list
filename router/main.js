@@ -27,4 +27,30 @@ router.route('/')
 		});
 	});
 
+router.route('/:id')
+	.get((req, res) => {
+		server.findOne({
+			_id: req.params.id
+		}, (err, info) => {
+			gamedig.query({
+				type: 'minecraftping',
+				host: info.host
+			}).then((state) => {
+				console.log(state)
+				console.log(state.players[0])
+				res.render('svInfo', {
+					online: true,
+					server: info,
+					state: state
+				})
+			}).catch((err) => {
+				res.render('svInfo', {
+					online: false,
+					server: info,
+					state: err
+				})
+			});
+		})
+	})
+
 module.exports = router;
