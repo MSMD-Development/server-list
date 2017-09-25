@@ -8,15 +8,19 @@ block content
 	.container
 		.row
 			.col
+				if action
+					.alert.alert-success <strong>成功！</strong>已成功新增伺服器，請稍待管理員審核後即顯示於列表中。
+		.row
+			.col
 				.card
 					.card-body
 						h5.card-title.mb-2.text-muted 快速新增伺服器<small>（注意：輸入的資料要經過審核後才會顯示在列表中）</small>
 						form(action="/", method="post")
 							.form-row.align-items-center
 								.col
-									input(type="text", placeholder="伺服器名稱", required).form-control
+									input(type="text", placeholder="伺服器名稱", name="name", required).form-control
 								.col
-									input(type="text", placeholder="連線位置", required).form-control
+									input(type="text", placeholder="連線位置", name="host", required).form-control
 								.col-auto
 									button.btn.btn-primary.form-control(type="submit") 新增
 		.row

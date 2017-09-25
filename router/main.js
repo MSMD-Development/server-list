@@ -6,7 +6,10 @@ var gamedig = require("gamedig");
 router.route('/')
 	.get((req, res) => {
 		server.find((err, servers) => {
-			res.render('index', { server: servers });
+			res.render('index', {
+				server: servers,
+				action: req.query.action
+			});
 		});
 	})
 	.post((req, res) => {
@@ -17,13 +20,14 @@ router.route('/')
 			online: false,
 			players: 0,
 			maxplayers: 0,
-			description: ' '
+			description: ' ',
+			display: false
 		});
 		s.save((err, server) => {
 			if (err)
 				res.send(err);
 			else
-				res.redirect('/');
+				res.redirect('/?action=seccess');
 		});
 	});
 
